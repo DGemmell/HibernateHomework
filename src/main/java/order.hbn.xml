@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "models.Order" table = "orders">
+        <id name = "id" type = "int" column = "id">
+            <generator class="identity"/>
+        </id>
+        <property name = "itemName" column = "item_name" type = "string"/>
+        <property name = "itemNumber" column = "item_number" type = "integer"/>
+        <property name = "quantity" column = "quantity" type = "integer"/>
+        <property name = "price" column = "price" type = "double"/>
+        <property name = "customer" column = "customer" type = "string"/>
+        <many-to-one name="customer" class="models.Customer" column="customer_id" lazy="false" not-null="true" />
+    </class>
+</hibernate-mapping>
