@@ -19,8 +19,14 @@ public class Runner {
         Order order2 = new Order("Red Dress",124, 1, 60.00, customer2);
         DBHelper.save(order2);
 
-        order1.setPrice(10.00);
+        customer1.setName("Linda McGinley");
+        DBHelper.save(customer1);
+
+        order1.setPrice(70.00);
         DBHelper.save(order1);
+
+        order2.setPrice(40.00);
+        DBHelper.save(order2);
 
         List<Order> orders = DBHelper.getAll("Order");
         List<Customer> customers = DBHelper.getAll("Customer");
