@@ -8,12 +8,9 @@
         <id name = "id" type = "int" column = "id">
             <generator class="identity"/>
         </id>
-        <property name = "id" column = "id" type = "int"/>
         <property name = "name" column = "name" type = "string"/>
-        <property name = "address" column = "address" type = "string"/>
-        <property name = "orderid" column = "order_id" type = "integer"/>
 
-        <set name="customers" inverse="true" cascade="all" lazy="true">
+        <set name="orders" inverse="true" cascade="all" lazy="true">
             <key>
                 <column name="customer_id" not-null="true" />
             </key>
